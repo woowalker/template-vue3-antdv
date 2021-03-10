@@ -1,0 +1,160 @@
+/* 作用：通用工具类 */
+/* 注意: 不在组件中使用 */
+
+// block
+.clearfix {
+  .clearfix();
+}
+.center-block {
+  .center-block();
+}
+.inline-block {
+  display: inline-block;
+}
+
+// float
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+// display
+.hide,
+.hidden {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+
+// position
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}
+
+// required
+.required{
+  &:before{
+    content: "*";
+    padding-right: 4px;
+    line-height: 1;
+    font-family: Arial;
+    font-size: 12px;
+    color: @color_aux_error;
+  }
+}
+
+// text
+.text-hide {
+  .text-hide();
+}
+.text-overflow {
+  .text-overflow();
+}
+.text-break { 
+  .text-break(); 
+}
+
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+.text-middle         { vertical-align: middle; }
+
+// decoration
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+// padding
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: pd, @prefix: ~"", @property: padding);
+// padding-top
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: pd, @prefix: t, @property: padding-top);
+// padding-right
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: pd, @prefix: r, @property: padding-right);
+// padding-bottom
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: pd, @prefix: b, @property: padding-bottom);
+// padding-left
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: pd, @prefix: l, @property: padding-left);
+// margin
+.loop(@start: 0, @total: 100, @step: 1, @unit: px, @selector: mg, @prefix: ~"", @property: margin);
+// margin-top
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: mg, @prefix: t, @property: margin-top);
+// margin-right
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: mg, @prefix: r, @property: margin-right);
+// margin-bottom
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: mg, @prefix: b, @property: margin-bottom);
+// margin-left
+.loop(@start: 0, @total: 30, @step: 5, @unit: px, @selector: mg, @prefix: l, @property: margin-left);
+
+// 设计规范工具类
+// gap
+.generate-gap-classes();
+
+// 主色
+.color-main-white {color: @color_main_white};
+.color-main-primary {color: @color_main_primary};
+.color-main-primary-light {color: @color_main_primary_light};
+.color-main-primary-dark {color: @color_main_primary_dark};
+// 辅色
+.color-aux-info {color: @color_main_primary};
+.color-aux-error {color: @color_aux_error};
+.color-aux-warning {color: @color_aux_warning};
+.color-aux-success {color: @color_aux_success};
+// 功能色
+.color-func-title-h1 {color: @color_func_title_h1}; // 标题1
+.color-func-title-h2 {color: @color_func_title_h2}; // 标题2
+.color-func-title-h3 {color: @color_func_title_h3}; // 标题3
+.color-func-title-h4 {color: @color_func_title_h4}; // 标题4
+.color-func-article {color: @color_func_article}; // 正文色
+.color-func-btn {color: @color_func_btn}; // 按钮文字色
+.color-func-action {color: @color_func_action}; // 操作图标色
+.color-func-auxiliary {color: @color_func_auxiliary}; // 辅助文字色
+.color-func-article-disabled {color: @color_func_article_disabled}; // 文字禁用
+.color-func-bg-disabled {color: @color_func_bg_disabled}; // 背景禁用
+.color-func-border-disabled {color: @color_func_border_disabled}; // 边框禁用
+.color-func-border-divide {color: @color_func_border_divide}; // 分割线色
+.color-func-bg-main {color: @color_func_bg_main}; // 背景色
+.color-func-stepbar {color: @color_func_stepbar}; // 步骤条颜色
+.color-func-nav-dark {color: @color_func_nav_dark}; // 顶部导航背景色
+.color-func-nav-light {color: @color_func_nav_light}; // 左侧导航背景色
+
+// 字体
+.font-size-xs {font-size: @font_size_xs};
+.font-size-s {font-size: @font_size_s};
+.font-size-m {font-size: @font_size_m};
+.font-size-l {font-size: @font_size_l};
+.font-size-xl {font-size: @font_size_xl};
+
+// 字重
+.font-weight-regular {font-weight: @font_weight_regular};
+.font-weight-medium {font-weight: @font_weight_medium};
+
+// 行高
+.font-line-self {line-height: @font_line_self};
+.font-line-small {line-height: @font_line_small};
+.font-line-default {line-height: @font_line_default};
+.font-line-large {line-height: @font_line_large};
+
+// 输入框宽度
+.input-xs {width: 96px};
+.input-s {width: 144px};
+.input-m {width: 184px};
+.input-l {width: 200px};
+.input-xl {width: 336px}; // 单行只有一个输入框时，默认采用xl的宽度
+.input-long {width: 100%};

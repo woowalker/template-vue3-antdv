@@ -1,0 +1,43 @@
+@gaps-key: xs, s, m, l, xl, xxl, iii, xxxl, iv, xxxxl, v, xxxxxl;
+@gaps-value: @gap_xs, @gap_s, @gap_m, @gap_l, @gap_xl, @gap_xxl, @gap_iii, @gap_xxxl, @gap_iv, @gap_xxxxl, @gap_v, @gap_xxxxxl;
+
+.generate-gap-classes(@i: length(@gaps-key)) when (@i > 0) {
+  .generate-gap-classes(@i - 1);
+
+  @key: extract(@gaps-key, @i);
+  @value: extract(@gaps-value, @i);
+
+  // padding
+  .pd-@{key} {
+    padding: @value;
+  }
+  .pd-t-@{key} {
+    padding-top: @value;
+  }
+  .pd-r-@{key} {
+    padding-right: @value;
+  }
+  .pd-b-@{key} {
+    padding-bottom: @value;
+  }
+  .pd-l-@{key} {
+    padding-left: @value;
+  }
+
+  // margin
+  .mg-@{key} {
+    margin: @value;
+  }
+  .mg-t-@{key} {
+    margin-top: @value;
+  }
+  .mg-r-@{key} {
+    margin-right: @value;
+  }
+  .mg-b-@{key} {
+    margin-bottom: @value;
+  }
+  .mg-l-@{key} {
+    margin-left: @value;
+  }
+}
